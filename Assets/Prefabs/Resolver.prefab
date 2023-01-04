@@ -1,0 +1,293 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &919319489368237551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 919319489368237553}
+  - component: {fileID: 919319489368237550}
+  m_Layer: 0
+  m_Name: Resolver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &919319489368237553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919319489368237551}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.6518927, y: 5.5492353, z: 5.453535}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &919319489368237550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919319489368237551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb674c81cf23edd4690ac1b11e2075e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTrans: {fileID: 0}
+  PlayerWeaponController: {fileID: 0}
+  _settings:
+    inputAxis:
+    - type: 1
+      min: -0.75
+      max: 0.75
+      threshold: 0.05
+      dead: 0.01
+      joystickIdentifier: 1
+      joystickDirection: 1
+    - type: 2
+      min: -0.75
+      max: 0.75
+      threshold: 0.01
+      dead: 0.01
+      joystickIdentifier: 1
+      joystickDirection: 2
+    - type: 3
+      min: -0.75
+      max: 0.75
+      threshold: 0.05
+      dead: 0.01
+      joystickIdentifier: 1
+      joystickDirection: 1
+    - type: 4
+      min: 0.2
+      max: 1
+      threshold: 0.05
+      dead: 0.01
+      joystickIdentifier: 2
+      joystickDirection: 2
+    controlSurface:
+      nonRudderLiftCoefficientCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: -19.962006
+          value: -0.5178833
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 34.99593
+          value: 2.0323906
+          inSlope: 0.0024406556
+          outSlope: 0.0024406556
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 64.95571
+          value: 0.523087
+          inSlope: -0.105056055
+          outSlope: -0.105056055
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10403323
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      nonRudderDragCoefficientCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: -19.989708
+          value: 0.5014801
+          inSlope: -0.025800185
+          outSlope: -0.025800185
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.18288207
+        - serializedVersion: 3
+          time: 1.6990151
+          value: 0.05045545
+          inSlope: 0.0022758485
+          outSlope: 0.0022758485
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.19612907
+          outWeight: 0.06699227
+        - serializedVersion: 3
+          time: 65.123695
+          value: 2.0140367
+          inSlope: 0.043723967
+          outSlope: 0.043723967
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.062290825
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rudderLiftCoefficientCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0.06409777
+          outSlope: 0.06409777
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.07052103
+        - serializedVersion: 3
+          time: 30.02839
+          value: 1.2179766
+          inSlope: 0.008416604
+          outSlope: 0.008416604
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.111435145
+          outWeight: 0.08647884
+        - serializedVersion: 3
+          time: 59.898758
+          value: 0.7773819
+          inSlope: -0.023274925
+          outSlope: -0.023274925
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10532841
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rudderDragCoefficientCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 60.02794
+          value: 0.16821265
+          inSlope: 0.009438535
+          outSlope: 0.009438535
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.034170642
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      flapIncidenceAngle: 3
+      flapDihedralAngle: 0
+      flapArea: 10
+      aileronIncidenceAngle: 3
+      aileronDihedralAngle: 0
+      aileronArea: 6.4
+      angledTrailIncidenceAngle: 3
+      angledTrailDihedralAngle: -24
+      angledTrailArea: 6
+      elevatorIncidenceAngle: 0
+      elevatorDihedralAngle: 12.9
+      elevatorArea: 5
+      rudderIncidenceAngle: 0
+      rudderDihedralAngle: 90
+      rudderArea: 7
+      fuselageIncidenceAngle: 0
+      fuselageDihedralAngle: 0
+      fuselageArea: 13.5
+    engine:
+      maxThrustMagnitude: 600000
+      engineThrottle:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.14283305
+          value: 0.9542897
+          inSlope: 0.114405505
+          outSlope: 0.114405505
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.080786176
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0.0741241
+          outSlope: 0.0741241
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.07432773
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    flight:
+      maxRollAngle: 80
+      rollSpeed: 60
+      rollTowardExtreme:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: -0.9844971
+          value: 1.0010681
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.9939575
+          value: -0.9854584
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      maxPitchAngle: 60
+      pitchSpeed: 60
+      yawSpeed: 60
+  VirtualCamera: {fileID: 0}
+  FlipCamera: {fileID: 0}
+  RightAnim: {fileID: 9100000, guid: 92bf1d973a97d5941a6da49c220d6d3e, type: 2}
+  LeftAnim: {fileID: 9100000, guid: 0821f7caac17d2441886e14149ce6a05, type: 2}
+  swipeRightAnim: {fileID: 9100000, guid: 0096726a5535cfe43919e0aa53d6be40, type: 2}
+  PlayerPrefab: {fileID: 9051056541157213381, guid: d60ffe887aebffa468fba3292f7586a8, type: 3}
+  Camera: {fileID: 0}
+  _targetLock: {fileID: 0}
+  playerAnim: {fileID: 0}

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6760644084139126687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6760644084139126657}
+  - component: {fileID: 6760644084139126656}
+  - component: {fileID: 1977566960}
+  m_Layer: 0
+  m_Name: SpawnerEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6760644084139126657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760644084139126687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6760644084139126656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760644084139126687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b88b2a35f886f4ab46bbbf650636f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnType: 2
+  Enabled: 1
+  Objectman:
+  - {fileID: 100052, guid: 1e5bfbf8df70102459b20f7524a05d6e, type: 3}
+  timeSpawn: 3
+  havingNumInScene: 3
+  MaxNumInScene: 7
+  timeIntervalAddOneUnit: 100
+  radius: 1400
+  Tag: Enemy
+  Type: Enemy
+  SpawnerTrans: {fileID: 0}
+  EnemyFirstCount: 3
+  _hudSystem: {fileID: 100000, guid: 01e882e2c509d1d4083f9ff79e6f3ae1, type: 3}
+  Icon: {fileID: 2800000, guid: 5cb6bdbdeac38d0419c21d95de832efa, type: 3}
+  arrowIcon: {fileID: 2800000, guid: 3552789587f0cf8428515bdcee400e0b, type: 3}
+  iconColor: {r: 0.8207547, g: 0.22880563, b: 0, a: 1}
+--- !u!114 &1977566960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760644084139126687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: d26fd06a446d1384c8eae94d8550da9e, type: 2}
+  _event: {fileID: 11400000, guid: d26fd06a446d1384c8eae94d8550da9e, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6760644084139126656}
+        m_TargetAssemblyTypeName: StrikeKit.EnemySpawner, Assembly-CSharp
+        m_MethodName: CheckPlayerDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
