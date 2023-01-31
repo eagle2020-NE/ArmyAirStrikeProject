@@ -10,6 +10,8 @@ TagManager:
   - Rocket
   - Bullet
   - Water
+  - Marcador
+  - Blocks
   layers:
   - Default
   - TransparentFX
@@ -19,9 +21,9 @@ TagManager:
   - UI
   - player
   - 
-  - 
-  - 
-  - 
+  - Suimono_Water
+  - Suimono_Depth
+  - Suimono_Screen
   - 
   - 
   - 
