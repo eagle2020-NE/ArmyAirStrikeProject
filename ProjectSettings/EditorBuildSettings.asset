@@ -5,16 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Shop.unity
     guid: 75942128a31aae54fb320c4b874fe484
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Achivement.unity
     guid: 3e89d9f7a2919894dab02dcb82d1d56e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndLessGamePlay.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelManager.unity
     guid: 4b4ccae38acd9434893dcd96e8abbbba
+  - enabled: 1
+    path: Assets/Scenes/City.unity
+    guid: 3db0ddad62271d1499e9fc3ad66d403a
+  - enabled: 0
+    path: Assets/Scenes/Islands.unity
+    guid: c5d3c26dc411c644fbb93fd81bec7d7c
+  - enabled: 0
+    path: Assets/Scenes/Desert.unity
+    guid: 27e1df6a0756a9348b402467b6cd25c4
   m_configObjects: {}
