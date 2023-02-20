@@ -20,11 +20,46 @@ MonoBehaviour:
     planeNumber: 0
     BuyGold: 0
     isFreePlane: 1
+    numberOfRockets: 1
+    numberOfBullets: 1
+    planeCurrentHealth: 430
+    planeCurrentSpeed: 1100
     upgradeDetails:
     - upgradeType: 0
       goldsNeed: 0000000064000000
     - upgradeType: 1
       goldsNeed: 0000000010270000204e0000
+    levelUpgrade:
+    - Level: Level 1
+      goldsNeed: 100
+      healthIncrease: 10
+      SpeedIncrease: 5
+      timeToUpgrade: 10
+      isUpgrade: 0
+    - Level: Level 2
+      goldsNeed: 200
+      healthIncrease: 12
+      SpeedIncrease: 10
+      timeToUpgrade: 20
+      isUpgrade: 0
+    - Level: Level 3
+      goldsNeed: 400
+      healthIncrease: 14
+      SpeedIncrease: 0
+      timeToUpgrade: 40
+      isUpgrade: 0
+    - Level: Level 4
+      goldsNeed: 0
+      healthIncrease: 0
+      SpeedIncrease: 0
+      timeToUpgrade: 80
+      isUpgrade: 0
+    - Level: Level 5
+      goldsNeed: 0
+      healthIncrease: 0
+      SpeedIncrease: 0
+      timeToUpgrade: 160
+      isUpgrade: 0
   - planeName: F14_TomCat
     planeCharacteristic: 'Role : air superiority                            National
       origin : United States                      First flight : 1970                          
@@ -32,8 +67,43 @@ MonoBehaviour:
     planeNumber: 1
     BuyGold: 100
     isFreePlane: 0
+    numberOfRockets: 1
+    numberOfBullets: 1
+    planeCurrentHealth: 510
+    planeCurrentSpeed: 1200
     upgradeDetails:
     - upgradeType: 0
       goldsNeed: 0000000064000000
     - upgradeType: 1
       goldsNeed: 00000000e8030000204e0000
+    levelUpgrade:
+    - Level: Level 1
+      goldsNeed: 0
+      healthIncrease: 0
+      SpeedIncrease: 0
+      timeToUpgrade: 0
+      isUpgrade: 0
+    - Level: Level 2
+      goldsNeed: 0
+      healthIncrease: 0
+      SpeedIncrease: 0
+      timeToUpgrade: 0
+      isUpgrade: 0
+    - Level: Level 3
+      goldsNeed: 0
+      healthIncrease: 0
+      SpeedIncrease: 0
+      timeToUpgrade: 0
+      isUpgrade: 0
+    - Level: Level 4
+      goldsNeed: 0
+      healthIncrease: 0
+      SpeedIncrease: 0
+      timeToUpgrade: 0
+      isUpgrade: 0
+    - Level: Level 5
+      goldsNeed: 0
+      healthIncrease: 0
+      SpeedIncrease: 0
+      timeToUpgrade: 0
+      isUpgrade: 0

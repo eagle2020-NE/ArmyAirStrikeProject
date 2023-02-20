@@ -20,7 +20,20 @@ public class PlanesDetails
     public int planeNumber;
     public int BuyGold;
     public bool isFreePlane;
+    [Space(10)]
+
+    public int numberOfRockets;
+    public int numberOfBullets;
+
+    [Space(10)]
+
+    public int planeCurrentHealth;
+    public int planeCurrentSpeed;
+
+    [Space(10)]
     public UpgradeDetails[] upgradeDetails;
+    [Space(10)]
+    public LevelUpgrade[] levelUpgrade;
 }
 
 [System.Serializable]
@@ -30,8 +43,24 @@ public class UpgradeDetails
     public int[] goldsNeed;
 }
 
+[System.Serializable]
+public class LevelUpgrade
+{
+    public string Level;
+    public int goldsNeed;
+    public int healthIncrease;
+    public int SpeedIncrease;
+    public int timeToUpgrade;
+    public bool isUpgrade;
+    
+}
+
+
+
+
 public enum UpgradeType
 {
     Rocket,
-    Gun
+    Gun,
+    Level
 }

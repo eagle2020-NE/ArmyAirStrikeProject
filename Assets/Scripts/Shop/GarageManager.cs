@@ -76,6 +76,61 @@ public class GarageManager : MonoBehaviour
     public TextMeshProUGUI JetNametxt;
     public TextMeshProUGUI JetCharText;
     public SoundManager[] soundManagers;
+
+    [Header("Fighters Level Upgrade Item dependencies")]
+    [SerializeField] private Text currentLevelText;
+    [SerializeField] private Text addedArmorText;
+    [SerializeField] private Text addedSpeedText;
+    [SerializeField] private Text currentArmorText;
+    [SerializeField] private Text currentSpeedText;
+    [SerializeField] private Text goldNeedText;
+
+
+
+    private int currentLevel;
+    public void UpgradePlaneLevel()
+    {
+        // upgrade health , maxSpeed 
+        int upgradeGoldNeed = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].goldsNeed;
+        if (gold >= upgradeGoldNeed)
+        {
+            GoldTransactions(false, upgradeGoldNeed);
+            planesData.planesDetails[currentShowingPlaneNum].planeCurrentHealth += planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].healthIncrease;
+            planesData.planesDetails[currentShowingPlaneNum].planeCurrentSpeed += planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].SpeedIncrease;
+            planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].isUpgrade = true;
+            UpgradePlaneLevelUI();
+
+        }
+        else
+        {
+            AdButton.SetActive(true);
+            buyButton.SetActive(false);
+        }
+
+    }
+    public void UpgradePlaneLevelUI()
+    {
+        // upgrade ui
+        for(int i = 0; i < planesData.planesDetails[currentShowingPlaneNum].levelUpgrade.Length; i++)
+        {
+            if (!planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].isUpgrade)
+            {
+                goldNeedText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].goldsNeed.ToString();
+                currentLevel = i;
+                currentLevelText.text = (i + 1).ToString();
+                addedArmorText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].healthIncrease.ToString();
+                addedSpeedText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].SpeedIncrease.ToString();
+                currentArmorText.text = planesData.planesDetails[currentShowingPlaneNum].planeCurrentHealth.ToString();
+                currentSpeedText.text = planesData.planesDetails[currentShowingPlaneNum].planeCurrentSpeed.ToString();
+                return;
+            }
+        }
+        
+        
+    }
+
+
+
     private void Awake()
     {
         soundManagers = FindObjectsOfType<SoundManager>(true);
@@ -87,7 +142,7 @@ public class GarageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //UpgradePlaneLevelUI();
         //standardBannerAd.RequestAndShow();
         SetPlayerBasicValue();
         LoadPlayerBasicValue();
@@ -377,6 +432,7 @@ public class GarageManager : MonoBehaviour
     }
 
 
+    
     public void SelectCurrentPlaneForGame()
     {
         curSelectedPlaneNumForGame = currentShowingPlaneNum;
@@ -590,6 +646,7 @@ public class GarageManager : MonoBehaviour
     public void SetJetCharacter()
     {
         JetCharText.text = planesData.planesDetails[currentShowingPlaneNum].planeCharacteristic;
+        UpgradePlaneLevelUI();
     }
 }
 
