@@ -22,8 +22,8 @@ MonoBehaviour:
     isFreePlane: 1
     numberOfRockets: 1
     numberOfBullets: 1
-    planeCurrentHealth: 430
-    planeCurrentSpeed: 1100
+    planeCurrentHealth: 300
+    planeCurrentSpeed: 1000
     upgradeDetails:
     - upgradeType: 0
       goldsNeed: 0000000064000000
@@ -32,33 +32,33 @@ MonoBehaviour:
     levelUpgrade:
     - Level: Level 1
       goldsNeed: 100
-      healthIncrease: 10
-      SpeedIncrease: 5
-      timeToUpgrade: 10
+      healthIncrease: 2
+      SpeedIncrease: 0
+      timeToUpgrade: 1
       isUpgrade: 0
     - Level: Level 2
       goldsNeed: 200
-      healthIncrease: 12
-      SpeedIncrease: 10
-      timeToUpgrade: 20
+      healthIncrease: 2
+      SpeedIncrease: 2
+      timeToUpgrade: 2
       isUpgrade: 0
     - Level: Level 3
       goldsNeed: 400
-      healthIncrease: 14
+      healthIncrease: 5
       SpeedIncrease: 0
-      timeToUpgrade: 40
+      timeToUpgrade: 3
       isUpgrade: 0
     - Level: Level 4
-      goldsNeed: 0
+      goldsNeed: 800
       healthIncrease: 0
-      SpeedIncrease: 0
-      timeToUpgrade: 80
+      SpeedIncrease: 5
+      timeToUpgrade: 4
       isUpgrade: 0
     - Level: Level 5
-      goldsNeed: 0
-      healthIncrease: 0
-      SpeedIncrease: 0
-      timeToUpgrade: 160
+      goldsNeed: 1600
+      healthIncrease: 5
+      SpeedIncrease: 5
+      timeToUpgrade: 5
       isUpgrade: 0
   - planeName: F14_TomCat
     planeCharacteristic: 'Role : air superiority                            National

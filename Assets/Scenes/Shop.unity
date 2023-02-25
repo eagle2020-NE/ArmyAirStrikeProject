@@ -1079,6 +1079,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2857089575330189459, guid: 9ebd0dc6d870e38489cfb76594774136, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ebd0dc6d870e38489cfb76594774136, type: 3}
 --- !u!1 &426918102 stripped
@@ -3016,6 +3020,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280885363}
   m_CullTransparentMesh: 1
+--- !u!114 &1309287602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1309287602, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
+  m_PrefabInstance: {fileID: 1733475355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1316117135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1017871472357754714, guid: 81d686edca6d4c14482055b00e22cdd9, type: 3}
@@ -3193,6 +3208,11 @@ RectTransform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4137523398012363269, guid: 3047f3e9d0b7d1e4e9561478afa018b0, type: 3}
   m_PrefabInstance: {fileID: 1430713851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1484276229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1484276229, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
+  m_PrefabInstance: {fileID: 1733475355}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1547501484 stripped
 GameObject:
@@ -3516,6 +3536,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 805545913}
     m_Modifications:
+    - target: {fileID: 5543168336702998286, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
+      propertyPath: m_Name
+      value: uptime
+      objectReference: {fileID: 0}
     - target: {fileID: 6189035212115990437, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
       propertyPath: m_Name
       value: Customization Menu
@@ -3659,6 +3683,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6189035212115990442, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
   m_PrefabInstance: {fileID: 1733475355}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1733475357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2609907515326782061, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
+  m_PrefabInstance: {fileID: 1733475355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1801236532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3871,6 +3906,9 @@ MonoBehaviour:
   currentArmorText: {fileID: 549909119}
   currentSpeedText: {fileID: 1212649686}
   goldNeedText: {fileID: 1018687249}
+  timeToUP: {fileID: 1309287602}
+  UPTimeText: {fileID: 1733475357}
+  levelupTimingPanel: {fileID: 1484276229}
 --- !u!4 &2098988180
 Transform:
   m_ObjectHideFlags: 0
