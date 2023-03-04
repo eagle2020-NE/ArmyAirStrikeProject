@@ -90,8 +90,23 @@ public class GarageManager : MonoBehaviour
     [SerializeField] private Text timeToUP;
     [SerializeField] private Text UPTimeText;
     [SerializeField] private GameObject  levelupTimingPanel;
+    [SerializeField] private GameObject  internetErrorPanel;
+    [SerializeField] private GameObject  planeLevelUpPanel;
+    [SerializeField] private GameObject  waitingPanel;
 
 
+    [SerializeField] private GameObject  GetLevelUpPanel;
+    [SerializeField] private Text nextLevelText;
+
+
+    public void _resetAllPanel()
+    {
+        waitingPanel.SetActive(false);
+        planeLevelUpPanel.SetActive(false);
+        internetErrorPanel.SetActive(false);
+        levelupTimingPanel.SetActive(false);
+        GetLevelUpPanel.SetActive(false);
+    }
 
     public DateTime currentTime;
 
@@ -111,6 +126,8 @@ public class GarageManager : MonoBehaviour
         {
             GoldTransactions(false, upgradeGoldNeed);
             levelupTimingPanel.SetActive(true);
+            planeLevelUpPanel.SetActive(false);
+            internetErrorPanel.SetActive(false);
             //SetCurrentLevelUpTime();
             StartCoroutine(SetCurrentLevelUpTime());
             //UpgradeOperation();
@@ -132,12 +149,24 @@ public class GarageManager : MonoBehaviour
     // each 1 s  callback
     IEnumerator SetCurrentLevelUpTime()
     {
-
+        print("current plane name : " + planeToLoad.name);
 
         if (upTime <= 0)
         {
-            UpgradeOperation();
-            levelupTimingPanel.SetActive(false);
+            //UpgradeOperation();
+
+            //levelupTimingPanel.SetActive(false);
+            //planeLevelUpPanel.SetActive(false);
+            //GetLevelUpPanel.SetActive(true);
+            //nextLevelText.text = (currentLevel + 2).ToString();
+            if (PlayerPrefs.GetInt(planeToLoad.name + "done") == 1)
+            {
+                levelupTimingPanel.SetActive(false);
+                planeLevelUpPanel.SetActive(false);
+                GetLevelUpPanel.SetActive(true);
+                nextLevelText.text = (currentLevel + 2).ToString();
+            }
+
 
         }
         else
@@ -165,27 +194,74 @@ public class GarageManager : MonoBehaviour
 
     public void CheckCurrentPlaneLevelUpgrade()
     {
-        if (!levelupTimingPanel.activeInHierarchy && PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum) == 1 && PlayerPrefs.GetInt("lastLevelUpgrading") == currentLevel)
+        upTime = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].timeToUpgrade * 60;
+        var Response = WebRequest.Create("http://www.google.com").GetResponse();
+
+        currentTime = DateTime.ParseExact
+                (Response.Headers["date"], "ddd, dd MMM yyyy HH:mm:ss 'GMT'", CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.AssumeUniversal);
+
+        DateTime lastPrizeTime = Convert.ToDateTime(PlayerPrefs.GetString("LastTimePlane" + currentShowingPlaneNum + "update"));
+        //print("last upgrade time : " + lastPrizeTime);
+        var passedTime = currentTime.Subtract(lastPrizeTime).TotalSeconds;
+        print("passed time : " + passedTime + " lastprizetime : " + lastPrizeTime);
+        upTime -= (int)passedTime;
+
+
+        //print("upgrageLevel : " + PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum));
+        if (isOnline && !levelupTimingPanel.activeInHierarchy &&
+            PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum) == 1 && PlayerPrefs.GetInt("lastLevelUpgrading") == currentLevel)
         {
-            upTime = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].timeToUpgrade * 60;
-            var Response = WebRequest.Create("http://www.google.com").GetResponse();
-
-            currentTime = DateTime.ParseExact
-                    (Response.Headers["date"], "ddd, dd MMM yyyy HH:mm:ss 'GMT'", CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.AssumeUniversal);
-
-            DateTime lastPrizeTime = Convert.ToDateTime(PlayerPrefs.GetString("LastTimePlane" + currentShowingPlaneNum + "update"));
-            //print("last upgrade time : " + lastPrizeTime);
-            var passedTime = currentTime.Subtract(lastPrizeTime).TotalSeconds;
-            print("passed time : " + passedTime + " lastprizetime : " + lastPrizeTime);
-            upTime -= (int)passedTime;
+            
             levelupTimingPanel.SetActive(true);
+            planeLevelUpPanel.SetActive(false);
+            internetErrorPanel.SetActive(false);
+            waitingPanel.SetActive(false);
+            PlaneParrent(true);
             StartCoroutine(SetCurrentLevelUpTime());
+            print("XXXXXXXXXXXXXXX");
             
         }
+        if(isOnline && PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum) == 0)
+        {
+            UpgradePlaneLevelUI();
+            print("____________");
+
+        }
+        if(isOnline && upTime < 0)
+        {
+            PlayerPrefs.SetInt(planeToLoad.name + "done", 1);
+            StartCoroutine(SetCurrentLevelUpTime());
+            //levelupTimingPanel.SetActive(false);
+            //planeLevelUpPanel.SetActive(false);
+            //GetLevelUpPanel.SetActive(true);
+            //nextLevelText.text = (currentLevel + 2).ToString();
+            print("KKKKKKKKKKKK");
+        }
+        if (!isOnline)
+        {
+            print("OOOOOOOOOOOOO");
+            waitingPanel.SetActive(false);
+            //PlaneParrent(true);
+            internetErrorPanel.SetActive(true);
+            levelupTimingPanel.SetActive(false);
+            planeLevelUpPanel.SetActive(false);
+        }
+
+    }
+
+    void PlaneParrent(bool isactive)
+    {
+        CreatedPlaneParent.gameObject.SetActive(isactive);
+        JetCharText.gameObject.SetActive(isactive);
+        JetNametxt.gameObject.SetActive(isactive);
     }
     public void UpgradeOperation()
     {
-        
+        levelupTimingPanel.SetActive(false);
+        planeLevelUpPanel.SetActive(true);
+        GetLevelUpPanel.SetActive(false);
+        PlayerPrefs.SetInt("upgrageLevel" + currentShowingPlaneNum, 0);
+        PlayerPrefs.SetInt(planeToLoad.name, 0);
         planesData.planesDetails[currentShowingPlaneNum].planeCurrentHealth += planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].healthIncrease;
         planesData.planesDetails[currentShowingPlaneNum].planeCurrentSpeed += planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].SpeedIncrease;
         planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].isUpgrade = true;
@@ -193,8 +269,14 @@ public class GarageManager : MonoBehaviour
     }
     public void UpgradePlaneLevelUI()
     {
+        internetErrorPanel.SetActive(false);
+        levelupTimingPanel.SetActive(false);
+        planeLevelUpPanel.SetActive(true);
+        waitingPanel.SetActive(false);
+        PlaneParrent(true);
+
         // upgrade ui
-        for(int i = 0; i < planesData.planesDetails[currentShowingPlaneNum].levelUpgrade.Length; i++)
+        for (int i = 0; i < planesData.planesDetails[currentShowingPlaneNum].levelUpgrade.Length; i++)
         {
             if (!planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].isUpgrade)
             {
@@ -204,7 +286,7 @@ public class GarageManager : MonoBehaviour
                 addedArmorText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].healthIncrease.ToString();
                 addedSpeedText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].SpeedIncrease.ToString();
                 currentArmorText.text = planesData.planesDetails[currentShowingPlaneNum].planeCurrentHealth.ToString();
-                currentSpeedText.text = planesData.planesDetails[currentShowingPlaneNum].planeCurrentSpeed.ToString();
+                currentSpeedText.text = (planesData.planesDetails[currentShowingPlaneNum].planeCurrentSpeed + 1000).ToString();
                 UPTimeText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].timeToUpgrade + " min";
                 return;
             }
@@ -213,28 +295,45 @@ public class GarageManager : MonoBehaviour
         
     }
 
+    private bool isOnline;
+
+    public void Refreshing()
+    {
+        waitingPanel.SetActive(true);
+        PlaneParrent(false);
+        StartCoroutine(BuildConnection());
+        //UpgradePlaneLevelUI();
+        //CheckCurrentPlaneLevelUpgrade();
+    }
     IEnumerator BuildConnection()
     {
         WWW www = new WWW("http://google.com");
         yield return www;
         if(www.error == null)
         {
+            isOnline = true;
             var Response = WebRequest.Create("http://www.google.com").GetResponse();
             yield return Response;
             currentTime = DateTime.ParseExact
                     (Response.Headers["date"], "ddd, dd MMM yyyy HH:mm:ss 'GMT'", CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.AssumeUniversal);
+            
+            UpgradePlaneLevelUI();
+            CheckCurrentPlaneLevelUpgrade();
         }
         else
         {
-            StartCoroutine(BuildConnection());
+            //StartCoroutine(BuildConnection());
+            isOnline = false;
+            CheckCurrentPlaneLevelUpgrade();
+            //StartCoroutine(BuildConnection());
         }
 
-        
+        print("isOnline : " + isOnline);
     }
 
     private void Awake()
     {
-        StartCoroutine(BuildConnection());
+        //StartCoroutine(BuildConnection());
         soundManagers = FindObjectsOfType<SoundManager>(true);
         foreach(var sm in soundManagers)
         {
@@ -451,7 +550,7 @@ public class GarageManager : MonoBehaviour
         {
             rightArrowObject.SetActive(true);
         }
-
+        _resetAllPanel();
     }
 
     public void Check_UI_Button()
@@ -747,9 +846,11 @@ public class GarageManager : MonoBehaviour
 
     public void SetJetCharacter()
     {
+        Refreshing();
         JetCharText.text = planesData.planesDetails[currentShowingPlaneNum].planeCharacteristic;
-        UpgradePlaneLevelUI();
-        CheckCurrentPlaneLevelUpgrade();
+        
+        //UpgradePlaneLevelUI();
+        //CheckCurrentPlaneLevelUpgrade();
     }
 }
 

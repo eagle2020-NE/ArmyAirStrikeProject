@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.28829765, g: 0.31877747, b: 0.3459959, a: 1}
+  m_IndirectSpecularColor: {r: 0.2889579, g: 0.31898212, b: 0.34645072, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6912,41 +6912,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3538006233570307865}
     - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
-      propertyPath: PlayerPrefab
-      value: 
-      objectReference: {fileID: 379853001801934565, guid: 70c90f9dbeb8117428b01b79186f049b, type: 3}
-    - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
       propertyPath: VirtualCamera
       value: 
       objectReference: {fileID: 1229137308}
-    - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
-      propertyPath: _settings.flight.yawSpeed
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
-      propertyPath: _settings.flight.rollSpeed
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
-      propertyPath: _settings.flight.pitchSpeed
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
-      propertyPath: _settings.flight.maxRollAngle
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
-      propertyPath: _settings.flight.maxPitchAngle
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
-      propertyPath: _settings.engine.engineThrottle.m_Curve.Array.data[1].time
-      value: 0.33184367
-      objectReference: {fileID: 0}
-    - target: {fileID: 919319489368237550, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
-      propertyPath: _settings.engine.engineThrottle.m_Curve.Array.data[1].value
-      value: 0.39097333
-      objectReference: {fileID: 0}
     - target: {fileID: 919319489368237551, guid: dceed7d00117b414fa221458a3a0d70d, type: 3}
       propertyPath: m_Name
       value: Resolver

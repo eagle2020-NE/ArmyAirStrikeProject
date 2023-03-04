@@ -20,6 +20,11 @@ namespace StrikeKit
 		public bool checkhealthbar { get; set; }
 		private void Start()
 		{
+			if(this.gameObject.tag == "Player" && this.gameObject.layer == 6)
+            {
+				HP = Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].planeCurrentHealth;
+			}
+			
 			checkhealthbar = false;
 			HPmax = HP;
 			if (OnFireParticle)

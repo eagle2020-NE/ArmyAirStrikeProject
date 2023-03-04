@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class Resolver : MonoBehaviour
 {
+    public PlanesData _planesData;
+
     public static Resolver Instance { get; private set; }
 
     public Transform playerTrans;

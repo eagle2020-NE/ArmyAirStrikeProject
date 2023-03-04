@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb674c81cf23edd4690ac1b11e2075e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _planesData: {fileID: 11400000, guid: 4bffa509734092a46aa8c8f5a14d13b6, type: 2}
   playerTrans: {fileID: 0}
   PlayerWeaponController: {fileID: 0}
   _settings:
@@ -232,8 +233,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.14283305
-          value: 0.9542897
+          time: 0.33184367
+          value: 0.39097333
           inSlope: 0.114405505
           outSlope: 0.114405505
           tangentMode: 0
@@ -253,8 +254,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     flight:
-      maxRollAngle: 80
-      rollSpeed: 60
+      maxRollAngle: 90
+      rollSpeed: 90
       rollTowardExtreme:
         serializedVersion: 2
         m_Curve:
@@ -279,15 +280,16 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      maxPitchAngle: 60
-      pitchSpeed: 60
-      yawSpeed: 60
+      maxPitchAngle: 80
+      pitchSpeed: 90
+      yawSpeed: 90
+      maxSpeed: 40
   VirtualCamera: {fileID: 0}
   FlipCamera: {fileID: 0}
   RightAnim: {fileID: 9100000, guid: 92bf1d973a97d5941a6da49c220d6d3e, type: 2}
   LeftAnim: {fileID: 9100000, guid: 0821f7caac17d2441886e14149ce6a05, type: 2}
   swipeRightAnim: {fileID: 9100000, guid: 0096726a5535cfe43919e0aa53d6be40, type: 2}
-  PlayerPrefab: {fileID: 9051056541157213381, guid: d60ffe887aebffa468fba3292f7586a8, type: 3}
+  PlayerPrefab: {fileID: 379853001801934565, guid: 70c90f9dbeb8117428b01b79186f049b, type: 3}
   Camera: {fileID: 0}
   _targetLock: {fileID: 0}
   playerAnim: {fileID: 0}

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ddcc685ae94e545a1a7d0913f5057e, type: 3}
   m_Name: GamesData
   m_EditorClassIdentifier: 
-  baseGold: 1000
+  baseGold: 10000

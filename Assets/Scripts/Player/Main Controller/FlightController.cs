@@ -229,7 +229,7 @@ public class FlightController
 
         forwardSpeed = Mathf.Lerp(forwardSpeed, _rigidBody.velocity.magnitude, 20f * Time.fixedDeltaTime);
 
-        forwardSpeed = Mathf.Clamp(forwardSpeed, 0, Resolver.Instance.settings.flight.maxSpeed * _throttleAxis.Value);
+        forwardSpeed = Mathf.Clamp(forwardSpeed, 0, Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].planeCurrentSpeed * _throttleAxis.Value);
 
         _rigidBody.velocity = Vector3.Lerp(_rigidBody.velocity, forwardSpeed * _transform.forward, 10f * Time.fixedDeltaTime);
         
