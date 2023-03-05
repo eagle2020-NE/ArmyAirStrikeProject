@@ -87,13 +87,13 @@ public class GameController : MonoBehaviour
     void CheckPlaneUpgrade()
     {
         // for rocket
-        print(PlayerPrefs.GetInt("LauncherCount" + PlayerPrefs.GetInt("curSelectedPlaneNumForGame")) + 1 + "_______");
-        for (int i = 0; i < PlayerPrefs.GetInt("LauncherCount" + PlayerPrefs.GetInt("curSelectedPlaneNumForGame")) + 1; i++)
+        print(Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].numberOfRockets);
+        for (int i = 0; i < Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].numberOfRockets; i++)
         {
             Resolver.Instance.PlayerWeaponController.WeaponLists[i + 3].gameObject.SetActive(true);
         }
         //  for gun
-        for (int i = 0; i < PlayerPrefs.GetInt("GunCount" + PlayerPrefs.GetInt("curSelectedPlaneNumForGame")) + 1; i++)
+        for (int i = 0; i < Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].numberOfBullets; i++)
         {
             Resolver.Instance.PlayerWeaponController.WeaponLists[i].gameObject.SetActive(true);
         }

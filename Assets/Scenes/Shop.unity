@@ -2109,6 +2109,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &962793702 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 962793702, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
+  m_PrefabInstance: {fileID: 1733475355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1018687249 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8279101984642508569, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
@@ -3280,14 +3291,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 805545913}
     m_Modifications:
-    - target: {fileID: 3408654727988848376, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634260168892264546, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4072591978186539387, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3424,34 +3427,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1258204878}
-    - target: {fileID: 6557789611250308752, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
-      propertyPath: m_Name
-      value: GetButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6557789611250308759, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2098988179}
-    - target: {fileID: 6557789611250308759, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeOperation
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557789611876334576, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
-      propertyPath: m_Name
-      value: text
-      objectReference: {fileID: 0}
-    - target: {fileID: 7581670598229194030, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8279101982936517244, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2098988179}
-    - target: {fileID: 8744346932616678283, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
 --- !u!224 &1733475356 stripped
@@ -3712,6 +3695,8 @@ MonoBehaviour:
   addedSpeedText: {fileID: 2048412036}
   currentArmorText: {fileID: 549909119}
   currentSpeedText: {fileID: 1212649686}
+  launcherCountText: {fileID: 2138068677}
+  gunCountText: {fileID: 962793702}
   goldNeedText: {fileID: 1018687249}
   timeToUP: {fileID: 1309287602}
   UPTimeText: {fileID: 1733475357}
@@ -3853,6 +3838,17 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2138068677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2138068677, guid: 3434166afd1a17544aa0dc46a18d85cb, type: 3}
+  m_PrefabInstance: {fileID: 1733475355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1001205210811122076
 PrefabInstance:
   m_ObjectHideFlags: 0

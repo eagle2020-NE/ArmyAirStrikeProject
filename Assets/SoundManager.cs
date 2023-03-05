@@ -46,7 +46,7 @@ public class SoundManager : MonoBehaviour
             text.text = "OFF";
             image.color = Color.red;
         }
-        print(PlayerPrefs.GetInt(playerPrefs) + "  ____");
+        //print(PlayerPrefs.GetInt(playerPrefs) + "  ____");
         //ToggleMusic();
     }
 

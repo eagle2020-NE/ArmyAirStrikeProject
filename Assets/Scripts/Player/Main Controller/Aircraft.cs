@@ -80,7 +80,7 @@ public class Aircraft : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         InputStructure = new InputStructure();
-        _inputProcessor = new InputProccessor(InputStructure);
+        
         enemySpawner = FindObjectsOfType<EnemySpawner>();
         _aircraftStructure = new AircraftStructure()
         {
@@ -90,8 +90,15 @@ public class Aircraft : MonoBehaviour
         };
 
         FlightState = new AircraftFlightState();
-        _flightController = new FlightController(Resolver.Instance.settings.flight, Resolver.Instance.settings.engine);
+        if(GameObject.Find("Resolver") != null)
+        {
+            _flightController = new FlightController(Resolver.Instance.settings.flight, Resolver.Instance.settings.engine);
+            _inputProcessor = new InputProccessor(InputStructure);
+        }
+        
 
+
+        
     }
 
     private void Start()

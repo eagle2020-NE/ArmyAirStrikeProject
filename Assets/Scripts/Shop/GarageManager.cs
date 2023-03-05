@@ -86,6 +86,8 @@ public class GarageManager : MonoBehaviour
     [SerializeField] private Text addedSpeedText;
     [SerializeField] private Text currentArmorText;
     [SerializeField] private Text currentSpeedText;
+    [SerializeField] private Text launcherCountText;
+    [SerializeField] private Text gunCountText;
     [SerializeField] private Text goldNeedText;
     [SerializeField] private Text timeToUP;
     [SerializeField] private Text UPTimeText;
@@ -116,7 +118,7 @@ public class GarageManager : MonoBehaviour
     public void UpgradePlaneLevel()
     {
         PlayerPrefs.SetInt("upgrageLevel" + currentShowingPlaneNum, 1);
-        PlayerPrefs.SetInt("lastLevelUpgrading", currentLevel);
+        PlayerPrefs.SetInt("lastLevelUpgrading" + currentShowingPlaneNum, currentLevel);
         PlayerPrefs.SetString("LastTimePlane" + currentShowingPlaneNum + "update", currentTime.ToString());
         //print("current time " + currentTime.ToString());
         // upgrade health , maxSpeed 
@@ -149,10 +151,11 @@ public class GarageManager : MonoBehaviour
     // each 1 s  callback
     IEnumerator SetCurrentLevelUpTime()
     {
-        print("current plane name : " + planeToLoad.name);
+        //print("current plane name : " + planeToLoad.name);
 
         if (upTime <= 0)
         {
+            PlayerPrefs.SetInt(planeToLoad.name + "done", 1);
             //UpgradeOperation();
 
             //levelupTimingPanel.SetActive(false);
@@ -194,24 +197,26 @@ public class GarageManager : MonoBehaviour
 
     public void CheckCurrentPlaneLevelUpgrade()
     {
-        upTime = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].timeToUpgrade * 60;
-        var Response = WebRequest.Create("http://www.google.com").GetResponse();
-
-        currentTime = DateTime.ParseExact
-                (Response.Headers["date"], "ddd, dd MMM yyyy HH:mm:ss 'GMT'", CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.AssumeUniversal);
-
-        DateTime lastPrizeTime = Convert.ToDateTime(PlayerPrefs.GetString("LastTimePlane" + currentShowingPlaneNum + "update"));
-        //print("last upgrade time : " + lastPrizeTime);
-        var passedTime = currentTime.Subtract(lastPrizeTime).TotalSeconds;
-        print("passed time : " + passedTime + " lastprizetime : " + lastPrizeTime);
-        upTime -= (int)passedTime;
+        
 
 
-        //print("upgrageLevel : " + PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum));
+        print("upgrageLevel : " + PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum) + "current Level : " + currentLevel + " last level upgrading : "  + PlayerPrefs.GetInt("lastLevelUpgrading" + currentShowingPlaneNum));
         if (isOnline && !levelupTimingPanel.activeInHierarchy &&
-            PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum) == 1 && PlayerPrefs.GetInt("lastLevelUpgrading") == currentLevel)
+            PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum) == 1 && PlayerPrefs.GetInt("lastLevelUpgrading" + currentShowingPlaneNum) == currentLevel)
         {
-            
+            upTime = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].timeToUpgrade * 60;
+            var Response = WebRequest.Create("http://www.google.com").GetResponse();
+
+            currentTime = DateTime.ParseExact
+                    (Response.Headers["date"], "ddd, dd MMM yyyy HH:mm:ss 'GMT'", CultureInfo.InvariantCulture.DateTimeFormat, DateTimeStyles.AssumeUniversal);
+
+            DateTime lastPrizeTime = Convert.ToDateTime(PlayerPrefs.GetString("LastTimePlane" + currentShowingPlaneNum + "update"));
+            //print("last upgrade time : " + lastPrizeTime);
+            var passedTime = currentTime.Subtract(lastPrizeTime).TotalSeconds;
+            print("passed time : " + passedTime + " lastprizetime : " + lastPrizeTime);
+            upTime -= (int)passedTime;
+
+
             levelupTimingPanel.SetActive(true);
             planeLevelUpPanel.SetActive(false);
             internetErrorPanel.SetActive(false);
@@ -229,7 +234,7 @@ public class GarageManager : MonoBehaviour
         }
         if(isOnline && upTime < 0)
         {
-            PlayerPrefs.SetInt(planeToLoad.name + "done", 1);
+            
             StartCoroutine(SetCurrentLevelUpTime());
             //levelupTimingPanel.SetActive(false);
             //planeLevelUpPanel.SetActive(false);
@@ -261,6 +266,7 @@ public class GarageManager : MonoBehaviour
         planeLevelUpPanel.SetActive(true);
         GetLevelUpPanel.SetActive(false);
         PlayerPrefs.SetInt("upgrageLevel" + currentShowingPlaneNum, 0);
+        PlayerPrefs.SetInt("lastLevelUpgrading" + currentShowingPlaneNum, currentLevel + 1);
         PlayerPrefs.SetInt(planeToLoad.name, 0);
         planesData.planesDetails[currentShowingPlaneNum].planeCurrentHealth += planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].healthIncrease;
         planesData.planesDetails[currentShowingPlaneNum].planeCurrentSpeed += planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].SpeedIncrease;
@@ -282,11 +288,13 @@ public class GarageManager : MonoBehaviour
             {
                 goldNeedText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].goldsNeed.ToString();
                 currentLevel = i;
-                currentLevelText.text = (i + 1).ToString();
+                currentLevelText.text = (currentLevel + 1).ToString();
                 addedArmorText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].healthIncrease.ToString();
                 addedSpeedText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].SpeedIncrease.ToString();
                 currentArmorText.text = planesData.planesDetails[currentShowingPlaneNum].planeCurrentHealth.ToString();
                 currentSpeedText.text = (planesData.planesDetails[currentShowingPlaneNum].planeCurrentSpeed + 1000).ToString();
+                launcherCountText.text = (planesData.planesDetails[currentShowingPlaneNum].numberOfRockets).ToString();
+                gunCountText.text = (planesData.planesDetails[currentShowingPlaneNum].numberOfBullets).ToString();
                 UPTimeText.text = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[i].timeToUpgrade + " min";
                 return;
             }
@@ -466,6 +474,12 @@ public class GarageManager : MonoBehaviour
 
     public void PrepareAircraftForShop(GameObject currentPlaneObj)
     {
+        Aircraft currentAircraft = currentPlaneObj.transform.GetComponent<Aircraft>();
+        currentAircraft.enabled = false;
+        currentAircraft.inShop = true;
+        print("prepare aircraft for shop");
+
+
         currentPlaneObj.GetComponentInChildren<Colliders>(true).gameObject.SetActive(false);
         Rigidbody currentRigidBody = currentPlaneObj.transform.GetComponent<Rigidbody>();
         currentRigidBody.isKinematic = true;
@@ -474,9 +488,9 @@ public class GarageManager : MonoBehaviour
         //currentAnimator.enabled = true;
         currentAnimator.runtimeAnimatorController = rotationController;
 
-        Aircraft currentAircraft = currentPlaneObj.transform.GetComponent<Aircraft>();
-        currentAircraft.enabled = false;
-        currentAircraft.inShop = true;
+        //Aircraft currentAircraft = currentPlaneObj.transform.GetComponent<Aircraft>();
+        //currentAircraft.enabled = false;
+        //currentAircraft.inShop = true;
 
         AudioSource currentAudioSource = currentPlaneObj.transform.GetComponent<AudioSource>();
         currentAudioSource.enabled = false;
@@ -497,6 +511,13 @@ public class GarageManager : MonoBehaviour
 
     public void PrepareAircraftForGame(GameObject currentPlaneObj)
     {
+
+        Aircraft currentAircraft = currentPlaneObj.transform.GetComponent<Aircraft>();
+        currentAircraft.enabled = true;
+        currentAircraft.inShop = false;
+        print("prepare aircraft for game");
+
+
         currentPlaneObj.transform.GetComponentInChildren<Colliders>(true).gameObject.SetActive(true);
 
         Rigidbody currentRigidBody = currentPlaneObj.transform.GetComponent<Rigidbody>();
@@ -506,10 +527,10 @@ public class GarageManager : MonoBehaviour
         //currentAnimator.enabled = false;
         currentAnimator.runtimeAnimatorController = blendTreeAnim;
 
-        Aircraft currentAircraft = currentPlaneObj.transform.GetComponent<Aircraft>();
-        currentAircraft.enabled = true;
-        currentAircraft.inShop = false;
-        print("XXXXXXXXXXXXXX");
+        //Aircraft currentAircraft = currentPlaneObj.transform.GetComponent<Aircraft>();
+        //currentAircraft.enabled = true;
+        //currentAircraft.inShop = false;
+        //print("XXXXXXXXXXXXXX");
 
         AudioSource currentAudioSource = currentPlaneObj.transform.GetComponent<AudioSource>();
         currentAudioSource.enabled = true;
@@ -751,6 +772,9 @@ public class GarageManager : MonoBehaviour
 
         upgradingType = UpgradingType.None;
 
+        UpgradePlaneLevelUI();
+        CheckCurrentPlaneLevelUpgrade();
+
     }
 
 
@@ -776,7 +800,8 @@ public class GarageManager : MonoBehaviour
         print(selectedRocketToBuyNum);
         if (gold >= goldNeed)
         {
-            PlayerPrefs.SetInt("LauncherCount" + currentShowingPlaneNum, selectedRocketToBuyNum);
+            planesData.planesDetails[currentShowingPlaneNum].numberOfRockets = selectedRocketToBuyNum + 1;
+            //PlayerPrefs.SetInt("LauncherCount" + currentShowingPlaneNum, selectedRocketToBuyNum);
             GoldTransactions(false, goldNeed);
             PlayerPrefs.SetInt("SelectedPlaneRocket" + currentShowingPlaneNum, selectedRocketToBuyNum);
             PlayerPrefs.SetInt("SelectedPlaneRocket" + currentShowingPlaneNum + "RocketBought" + selectedRocketToBuyNum , 1);
@@ -812,7 +837,8 @@ public class GarageManager : MonoBehaviour
         int goldNeed = planesData.planesDetails[currentShowingPlaneNum].upgradeDetails[1].goldsNeed[selectedGunToBuyNum]; // 0 1 2
         if (gold >= goldNeed)
         {
-            PlayerPrefs.SetInt("GunCount" + currentShowingPlaneNum, selectedGunToBuyNum);
+            planesData.planesDetails[currentShowingPlaneNum].numberOfBullets = selectedGunToBuyNum + 1;
+            //PlayerPrefs.SetInt("GunCount" + currentShowingPlaneNum, selectedGunToBuyNum);
             GoldTransactions(false, goldNeed);
             PlayerPrefs.SetInt("SelectedPlaneGun" + currentShowingPlaneNum, selectedGunToBuyNum);
             PlayerPrefs.SetInt("SelectedPlaneGun" + currentShowingPlaneNum + "GunBought" + selectedGunToBuyNum, 1);

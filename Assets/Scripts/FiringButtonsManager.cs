@@ -36,23 +36,28 @@ public class FiringButtonsManager : MonoBehaviour
     float RocketTimer;
 
 
-    private void Awake()
+    private void Start()
     {
         //if (PlayerPrefs.GetInt("giveFirstRockets") != 1)
         //{
         //    PlayerPrefs.SetInt("NormalRocket", firstRocketsCount);
         //    PlayerPrefs.SetInt("giveFirstRockets", 1);
         //}
-        rocketNumCanShoot = PlayerPrefs.GetInt("LauncherCount" + PlayerPrefs.GetInt("curSelectedPlaneNumForGame")) + 1;
+        rocketNumCanShoot = Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].numberOfRockets;
+        //rocketNumCanShoot = PlayerPrefs.GetInt("LauncherCount" + PlayerPrefs.GetInt("curSelectedPlaneNumForGame")) + 1;
         rocketCanShoot.text = rocketNumCanShoot.ToString();
 
+        print("rocketNumCanShoot : " + rocketNumCanShoot);
         
 
         canLaunchRocket = true;
         CantCheck = false;
 
-        GunNumCanShoot = PlayerPrefs.GetInt("GunCount" + PlayerPrefs.GetInt("curSelectedPlaneNumForGame")) + 1;
+        GunNumCanShoot = Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].numberOfBullets;
+        //GunNumCanShoot = PlayerPrefs.GetInt("GunCount" + PlayerPrefs.GetInt("curSelectedPlaneNumForGame")) + 1;
         GunCanShootTMpro.text = GunNumCanShoot.ToString();
+
+        print("GunNumCanShoot : " + GunNumCanShoot);
     }
     
     private void Update()
