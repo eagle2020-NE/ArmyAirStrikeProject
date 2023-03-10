@@ -22,8 +22,8 @@ MonoBehaviour:
     isFreePlane: 1
     numberOfRockets: 1
     numberOfBullets: 1
-    planeCurrentHealth: 72
-    planeCurrentSpeed: 40
+    planeCurrentHealth: 40
+    planeCurrentSpeed: 52
     upgradeDetails:
     - upgradeType: 0
       goldsNeed: 0000000064000000
@@ -34,31 +34,31 @@ MonoBehaviour:
       goldsNeed: 100
       healthIncrease: 3
       SpeedIncrease: 5
-      timeToUpgrade: 1
+      timeToUpgrade: 5
       isUpgrade: 0
     - Level: Level 2
       goldsNeed: 300
       healthIncrease: 5
       SpeedIncrease: 2
-      timeToUpgrade: 1
+      timeToUpgrade: 10
       isUpgrade: 0
     - Level: Level 3
       goldsNeed: 400
       healthIncrease: 5
       SpeedIncrease: 0
-      timeToUpgrade: 1
+      timeToUpgrade: 20
       isUpgrade: 0
     - Level: Level 4
       goldsNeed: 500
       healthIncrease: 10
       SpeedIncrease: 5
-      timeToUpgrade: 1
+      timeToUpgrade: 40
       isUpgrade: 0
     - Level: Level 5
       goldsNeed: 700
       healthIncrease: 20
       SpeedIncrease: 20
-      timeToUpgrade: 1
+      timeToUpgrade: 80
       isUpgrade: 0
   - planeName: F14_TomCat
     planeCharacteristic: 'Role : air superiority                            National
@@ -69,8 +69,8 @@ MonoBehaviour:
     isFreePlane: 0
     numberOfRockets: 1
     numberOfBullets: 1
-    planeCurrentHealth: 82
-    planeCurrentSpeed: 60
+    planeCurrentHealth: 60
+    planeCurrentSpeed: 64
     upgradeDetails:
     - upgradeType: 0
       goldsNeed: 0000000064000000
@@ -81,29 +81,29 @@ MonoBehaviour:
       goldsNeed: 300
       healthIncrease: 2
       SpeedIncrease: 2
-      timeToUpgrade: 1
-      isUpgrade: 0
+      timeToUpgrade: 10
+      isUpgrade: 1
     - Level: Level 2
       goldsNeed: 400
       healthIncrease: 5
       SpeedIncrease: 0
-      timeToUpgrade: 1
+      timeToUpgrade: 20
       isUpgrade: 0
     - Level: Level 3
       goldsNeed: 500
       healthIncrease: 5
       SpeedIncrease: 5
-      timeToUpgrade: 1
+      timeToUpgrade: 40
       isUpgrade: 0
     - Level: Level 4
       goldsNeed: 700
       healthIncrease: 5
       SpeedIncrease: 10
-      timeToUpgrade: 1
+      timeToUpgrade: 80
       isUpgrade: 0
     - Level: Level 5
       goldsNeed: 1000
       healthIncrease: 15
       SpeedIncrease: 5
-      timeToUpgrade: 1
+      timeToUpgrade: 160
       isUpgrade: 0

@@ -48,15 +48,15 @@ MonoBehaviour:
   Enabled: 1
   Objectman:
   - {fileID: 100052, guid: 1e5bfbf8df70102459b20f7524a05d6e, type: 3}
-  timeSpawn: 3
-  havingNumInScene: 3
-  MaxNumInScene: 7
-  timeIntervalAddOneUnit: 100
+  timeSpawn: 5
+  havingNumInScene: 2
+  MaxNumInScene: 6
+  timeIntervalAddOneUnit: 50
   radius: 1400
   Tag: Enemy
   Type: Enemy
   SpawnerTrans: {fileID: 0}
-  EnemyFirstCount: 3
+  EnemyFirstCount: 1
   _hudSystem: {fileID: 100000, guid: 01e882e2c509d1d4083f9ff79e6f3ae1, type: 3}
   Icon: {fileID: 2800000, guid: 5cb6bdbdeac38d0419c21d95de832efa, type: 3}
   arrowIcon: {fileID: 2800000, guid: 3552789587f0cf8428515bdcee400e0b, type: 3}
