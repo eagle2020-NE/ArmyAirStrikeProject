@@ -132,7 +132,7 @@ public class GarageManager : MonoBehaviour
             GoldTransactions(false, upgradeGoldNeed);
 
 
-            CheckCurrentPlaneLevelUpgrade();
+            CheckCurrentPlaneLevelUpgrade(false);
             //Set_LevelTimingPanel();
 
         }
@@ -166,10 +166,11 @@ public class GarageManager : MonoBehaviour
         if (upTime <= 0)
         {
             Set_GetPlaneLevelUpButton();
+            print("oooooooooooooopppppppppppeeeeeeeeeennnnnnnnnnn");
             timerState = false;
             PlayerPrefs.SetInt("timerState" + currentShowingPlaneNum, 0);
         }
-        else
+        if(upTime >= 0 && PlayerPrefs.GetInt("timerState" + currentShowingPlaneNum) == 1)
         {
             int hours = upTime / 3600;
             int minutes = (upTime - (hours * 3600)) / 60;
@@ -182,12 +183,14 @@ public class GarageManager : MonoBehaviour
 
             StartCoroutine(SetCurrentLevelUpTime());
 
+            print(currentShowingPlaneNum + " upTime : " + upTime);
+
 
         }
-        onceTimer = true;
+        
 
 
-
+        print("timerrrrrrrrr");
 
 
 
@@ -217,12 +220,12 @@ public class GarageManager : MonoBehaviour
         GetLevelUpPanel.SetActive(true);
     }
 
-    public void CheckCurrentPlaneLevelUpgrade()
+    public void CheckCurrentPlaneLevelUpgrade(bool getResponse)
     {
 
         FindCurrentUpgradeLevel();
 
-
+        Set_planeCharacteristic();
 
 
         if (!isOnline)
@@ -240,7 +243,11 @@ public class GarageManager : MonoBehaviour
         if (PlayerPrefs.GetInt("upgrageLevel" + currentShowingPlaneNum) == 1 && PlayerPrefs.GetInt("lastLevelUpgrading" + currentShowingPlaneNum) == currentLevel)
         {
 
-            if (PlayerPrefs.GetInt("timerState" + currentShowingPlaneNum) == 0)
+            //if (PlayerPrefs.GetInt("timerState" + currentShowingPlaneNum) == 0)
+            //{
+                
+            //}
+            if(getResponse && !onceTimer)
             {
                 upTime = planesData.planesDetails[currentShowingPlaneNum].levelUpgrade[currentLevel].timeToUpgrade * 60;
 
@@ -277,11 +284,6 @@ public class GarageManager : MonoBehaviour
            
 
         }
-        //else
-        //{
-        //    Set_GetPlaneLevelUpButton();
-
-        //}
 
     }
 
@@ -307,12 +309,15 @@ public class GarageManager : MonoBehaviour
         GetLevelUpPanel.SetActive(false);
         timerState = true;
         PlayerPrefs.SetInt("timerState" + currentShowingPlaneNum, 1);
+        print("oncetimer : " + onceTimer + "uptime : " + upTime);
         if (!onceTimer)
         {
+            onceTimer = true;
             StartCoroutine(SetCurrentLevelUpTime());
+
         }
         //eachCallOneCurrentTime = true;
-        print("oncetimer : " + onceTimer + "uptime : " + upTime);
+       
     }
     
 
@@ -436,13 +441,13 @@ public class GarageManager : MonoBehaviour
             print("isOnline : " + isOnline);
 
 
-            CheckCurrentPlaneLevelUpgrade();
+            CheckCurrentPlaneLevelUpgrade(true);
 
 
         }
         else
         {
-            CheckCurrentPlaneLevelUpgrade();
+            CheckCurrentPlaneLevelUpgrade(true);
         }
 
 
@@ -663,6 +668,7 @@ public class GarageManager : MonoBehaviour
 
         PlaneCode currentPlaneCode = currentPlaneObj.transform.GetComponent<PlaneCode>();
         currentPlaneCode.enabled = false;
+        print("1111111111111111111111111");
 
     }
 
@@ -890,7 +896,7 @@ public class GarageManager : MonoBehaviour
         upgradingType = UpgradingType.None;
 
         //Set_LevelUpPanelDetails();
-        CheckCurrentPlaneLevelUpgrade();
+        CheckCurrentPlaneLevelUpgrade(false);
 
     }
 

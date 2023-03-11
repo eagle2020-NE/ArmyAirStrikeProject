@@ -22,8 +22,8 @@ MonoBehaviour:
     isFreePlane: 1
     numberOfRockets: 1
     numberOfBullets: 1
-    planeCurrentHealth: 97
-    planeCurrentSpeed: 108
+    planeCurrentHealth: 116
+    planeCurrentSpeed: 125
     upgradeDetails:
     - upgradeType: 0
       goldsNeed: 0000000064000000
@@ -69,8 +69,8 @@ MonoBehaviour:
     isFreePlane: 0
     numberOfRockets: 1
     numberOfBullets: 1
-    planeCurrentHealth: 62
-    planeCurrentSpeed: 66
+    planeCurrentHealth: 71
+    planeCurrentSpeed: 70
     upgradeDetails:
     - upgradeType: 0
       goldsNeed: 0000000064000000
