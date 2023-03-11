@@ -187,7 +187,7 @@ MonoBehaviour:
   windRight: {fileID: 3284841762345110841}
   blueSpeedLeft: {fileID: 2382256022014523297}
   blueSpeedRight: {fileID: 7374794417314984405}
-  inShop: 0
+  inShop: 1
 --- !u!82 &3627768751665269349
 AudioSource:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
   BulletTag: Bullet
   RocketDamage: 3
   BulletDamage: 1
-  Damage: 100
+  Damage: 200
   SoundOnHit: []
 --- !u!114 &4942222237015617579
 MonoBehaviour:
@@ -1339,7 +1339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2643930691661734069
 Transform:
   m_ObjectHideFlags: 0

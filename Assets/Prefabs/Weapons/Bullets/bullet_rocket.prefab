@@ -110,9 +110,9 @@ MonoBehaviour:
   Damping: 6
   Speed: 8000
   SpeedMax: 12000
-  SpeedMult: 10
+  SpeedMult: 500
   Noise: {x: 0, y: 0, z: 0}
-  TargetLockDirection: 0.86
+  TargetLockDirection: 0.58
   DistanceLock: 1000
   DurationLock: 40
   Seeker: 0

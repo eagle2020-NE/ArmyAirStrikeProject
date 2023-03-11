@@ -5488,7 +5488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6660662523091731093
 Transform:
   m_ObjectHideFlags: 0
@@ -6760,7 +6760,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.15
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 3
@@ -6774,7 +6774,7 @@ Animator:
   m_GameObject: {fileID: 9051056541157213381}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd506b97607e4014193de3894db9d4ea, type: 2}
+  m_Controller: {fileID: 9100000, guid: 95738f46d7c4e5f488ec4b6126062eea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6790,7 +6790,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051056541157213381}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33aa6d21916903e49bdb0143d208f4eb, type: 3}
   m_Name: 
@@ -6808,7 +6808,7 @@ MonoBehaviour:
   windRight: {fileID: 6145258032177688345}
   blueSpeedLeft: {fileID: 6472011898946983297}
   blueSpeedRight: {fileID: 2199662897002714101}
-  inShop: 1
+  inShop: 0
 --- !u!82 &5370016747030489157
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6816,7 +6816,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051056541157213381}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8542084859791039326, guid: 890ad5040a6de7d45b5f344f33dc5adc, type: 2}
   m_audioClip: {fileID: 0}
@@ -6912,7 +6912,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051056541157213381}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8695a8c6946aaf47af6c1dc0850df35, type: 3}
   m_Name: 
@@ -6934,7 +6934,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051056541157213381}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3477775dbd7338249b8712399e59fd4e, type: 3}
   m_Name: 
@@ -6954,7 +6954,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051056541157213381}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 680d0c3ef931a894590dd9f487ca3a28, type: 3}
   m_Name: 
@@ -6971,7 +6971,7 @@ MonoBehaviour:
   BulletTag: Bullet
   RocketDamage: 3
   BulletDamage: 1
-  Damage: 100
+  Damage: 200
   SoundOnHit: []
 --- !u!114 &4343723225066885643
 MonoBehaviour:
@@ -6980,7 +6980,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051056541157213381}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02f2b3d6a26677d49b4c18c128e05efc, type: 3}
   m_Name: 
