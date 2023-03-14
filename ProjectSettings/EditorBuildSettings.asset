@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LevelManager.unity
     guid: 4b4ccae38acd9434893dcd96e8abbbba
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/City.unity
     guid: 3db0ddad62271d1499e9fc3ad66d403a
   - enabled: 0
@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Desert.unity
     guid: 27e1df6a0756a9348b402467b6cd25c4
+  - enabled: 0
+    path: Assets/Scenes/Mountains.unity
+    guid: dec81c94834f0ad4b8eadaebde869424
+  - enabled: 0
+    path: Assets/Scenes/City 1.unity
+    guid: e7656ca5cc9c960499927237d0554254
+  - enabled: 1
+    path: Assets/Scenes/City 2.unity
+    guid: 39c247a9832f42b4181c9c2eec268034
   m_configObjects: {}
