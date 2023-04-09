@@ -686,7 +686,7 @@ public class GarageManager : MonoBehaviour
             leftArrowObject.SetActive(true);
         }
 
-        if (currentShowingPlaneNum == 1)
+        if (currentShowingPlaneNum == 4)
         {
             rightArrowObject.SetActive(false);
         }
