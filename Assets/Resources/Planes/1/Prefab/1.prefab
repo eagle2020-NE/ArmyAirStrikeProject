@@ -350,7 +350,7 @@ MonoBehaviour:
   BulletTag: Bullet
   RocketDamage: 3
   BulletDamage: 1
-  Damage: 100
+  Damage: 200
   SoundOnHit: []
 --- !u!114 &4942222237015617579
 MonoBehaviour:

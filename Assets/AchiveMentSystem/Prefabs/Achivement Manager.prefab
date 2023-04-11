@@ -48,11 +48,11 @@ MonoBehaviour:
   firstRocketsCount: 80
   _achivementPrefab: {fileID: 7074468120147793095, guid: 43a06375c7f22a24982a4a75586ec5b8, type: 3}
   _achivementParent: {fileID: 0}
-  RocketReward: 50
+  RocketReward: 70
   KilledEnemyRewardFactor: 50
   FreeRocket: 10
   FreeCoin: 10
-  CoinFactor: 50
+  CoinFactor: 200
   achivementsList:
   - achivementText: Kill 9 Enemies
     achivementAmount: 9

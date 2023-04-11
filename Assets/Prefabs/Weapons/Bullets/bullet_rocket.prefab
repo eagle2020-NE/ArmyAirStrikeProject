@@ -31,14 +31,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 362.61853, y: -102.08254, z: 335.7214}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,14 +108,14 @@ MonoBehaviour:
   TorqueSpeedAxis: {x: 0, y: 0, z: 0}
   TorqueObject: {fileID: 0}
   Damping: 6
-  Speed: 10000
-  SpeedMax: 15000
+  Speed: 8000
+  SpeedMax: 12000
   SpeedMult: 500
   Noise: {x: 0, y: 0, z: 0}
-  TargetLockDirection: 0.5
+  TargetLockDirection: 0.58
   DistanceLock: 1000
   DurationLock: 40
-  Seeker: 1
+  Seeker: 0
   LifeTime: 7
 --- !u!54 &5400000
 Rigidbody:

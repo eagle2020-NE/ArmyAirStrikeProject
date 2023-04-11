@@ -56,6 +56,7 @@ namespace StrikeKit
 				if (direction < TargetLockDirection)
 				{
 					Target = null;
+					print("rocket target null");
 				}
 			}
 

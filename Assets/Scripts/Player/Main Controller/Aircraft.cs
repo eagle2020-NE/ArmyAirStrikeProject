@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+using DG.Tweening;
+
 public class Aircraft : MonoBehaviour
 {
     public Rigidbody rb;
@@ -106,6 +108,11 @@ public class Aircraft : MonoBehaviour
         _flightController.Initialize(transform, rb, _aircraftStructure, InputStructure, FlightState, windEmissionLeft, windEmissionRight);
 
         _throttleAxis = InputStructure.Axes.Single(a => a.Type == InputAxisType.Throttle);
+
+        //transform.DORotate(new Vector3(0, 0, 5), 1, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(Ease.InBounce);
+        //transform.DOShakeRotation(10000, 2);
+
+
     }
 
     private void Update()
@@ -116,7 +123,17 @@ public class Aircraft : MonoBehaviour
             enemySpawner[i].SpawnerTrans = this.transform;
         }
         //enemySpawner.SpawnerTrans = this.transform;
-       //print("aircraft velocity " + rb.velocity.magnitude);
+        //print("aircraft velocity " + rb.velocity.magnitude);
+
+        
+        //if(transform.rotation.z > 5)
+        //{
+        //    transform.Rotate(new Vector3(0,0,-Time.deltaTime));
+        //}
+        //else if (transform.rotation.z < -5)
+        //{
+        //    transform.Rotate(new Vector3(0, 0, Time.deltaTime));
+        //}
     }
 
     private void FixedUpdate()
@@ -152,7 +169,7 @@ public class Aircraft : MonoBehaviour
 
     public void ChangeSpeedBlue(float throthle)
     {
-        speedblueLeftEmission.rate = throthle * 50;
-        speedblueRightEmission.rate = throthle * 50; 
+        speedblueLeftEmission.rate = throthle * 100;
+        speedblueRightEmission.rate = throthle * 100; 
     }
 }

@@ -48,8 +48,8 @@ MonoBehaviour:
   Objectman:
   - {fileID: 5328718203164012403, guid: 5fd040825fd95eb448b52e3b2de47ed7, type: 3}
   timeSpawn: 10
-  havingNumInScene: 2
-  MaxNumInScene: 3
+  havingNumInScene: 1
+  MaxNumInScene: 2
   timeIntervalAddOneUnit: 100
   radius: 500
   Tag: Player

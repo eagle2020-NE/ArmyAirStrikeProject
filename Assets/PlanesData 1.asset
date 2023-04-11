@@ -22,7 +22,7 @@ MonoBehaviour:
     isFreePlane: 1
     numberOfRockets: 1
     numberOfBullets: 1
-    planeCurrentHealth: 72
+    planeCurrentHealth: 15
     planeCurrentSpeed: 40
     upgradeDetails:
     - upgradeType: 0
@@ -31,45 +31,45 @@ MonoBehaviour:
       goldsNeed: 0000000064000000c8000000
     levelUpgrade:
     - Level: Level 1
-      goldsNeed: 100
-      healthIncrease: 3
-      SpeedIncrease: 5
-      timeToUpgrade: 1
+      goldsNeed: 500
+      healthIncrease: 2
+      SpeedIncrease: 2
+      timeToUpgrade: 20
       isUpgrade: 0
     - Level: Level 2
-      goldsNeed: 300
-      healthIncrease: 5
-      SpeedIncrease: 2
-      timeToUpgrade: 1
+      goldsNeed: 600
+      healthIncrease: 3
+      SpeedIncrease: 3
+      timeToUpgrade: 60
       isUpgrade: 0
     - Level: Level 3
-      goldsNeed: 400
+      goldsNeed: 1000
       healthIncrease: 5
       SpeedIncrease: 0
-      timeToUpgrade: 1
+      timeToUpgrade: 90
       isUpgrade: 0
     - Level: Level 4
-      goldsNeed: 500
-      healthIncrease: 10
+      goldsNeed: 2000
+      healthIncrease: 0
       SpeedIncrease: 5
-      timeToUpgrade: 1
+      timeToUpgrade: 120
       isUpgrade: 0
     - Level: Level 5
-      goldsNeed: 700
-      healthIncrease: 20
-      SpeedIncrease: 20
-      timeToUpgrade: 1
+      goldsNeed: 4000
+      healthIncrease: 5
+      SpeedIncrease: 5
+      timeToUpgrade: 180
       isUpgrade: 0
   - planeName: F14_TomCat
     planeCharacteristic: 'Role : air superiority                            National
       origin : United States                      First flight : 1970                          
       Primary users ; US  , IRAN'
     planeNumber: 1
-    BuyGold: 1000
+    BuyGold: 5000
     isFreePlane: 0
     numberOfRockets: 1
     numberOfBullets: 1
-    planeCurrentHealth: 82
+    planeCurrentHealth: 25
     planeCurrentSpeed: 60
     upgradeDetails:
     - upgradeType: 0
@@ -78,32 +78,173 @@ MonoBehaviour:
       goldsNeed: 00000000c800000090010000
     levelUpgrade:
     - Level: Level 1
-      goldsNeed: 300
+      goldsNeed: 1000
       healthIncrease: 2
       SpeedIncrease: 2
-      timeToUpgrade: 1
+      timeToUpgrade: 30
       isUpgrade: 0
     - Level: Level 2
-      goldsNeed: 400
-      healthIncrease: 5
-      SpeedIncrease: 0
-      timeToUpgrade: 1
+      goldsNeed: 1500
+      healthIncrease: 3
+      SpeedIncrease: 3
+      timeToUpgrade: 60
       isUpgrade: 0
     - Level: Level 3
-      goldsNeed: 500
+      goldsNeed: 2000
       healthIncrease: 5
-      SpeedIncrease: 5
-      timeToUpgrade: 1
+      SpeedIncrease: 0
+      timeToUpgrade: 120
       isUpgrade: 0
     - Level: Level 4
-      goldsNeed: 700
+      goldsNeed: 4000
       healthIncrease: 5
-      SpeedIncrease: 10
-      timeToUpgrade: 1
+      SpeedIncrease: 5
+      timeToUpgrade: 240
       isUpgrade: 0
     - Level: Level 5
-      goldsNeed: 1000
+      goldsNeed: 10000
       healthIncrease: 15
+      SpeedIncrease: 0
+      timeToUpgrade: 300
+      isUpgrade: 0
+  - planeName: F5
+    planeCharacteristic: 'Role : air superiority                            National
+      origin : United States                      First flight : 1970                          
+      Primary users ; US  , IRAN'
+    planeNumber: 2
+    BuyGold: 5000
+    isFreePlane: 0
+    numberOfRockets: 1
+    numberOfBullets: 1
+    planeCurrentHealth: 25
+    planeCurrentSpeed: 60
+    upgradeDetails:
+    - upgradeType: 0
+      goldsNeed: 0000000064000000
+    - upgradeType: 1
+      goldsNeed: 00000000c800000090010000
+    levelUpgrade:
+    - Level: Level 1
+      goldsNeed: 1000
+      healthIncrease: 2
+      SpeedIncrease: 2
+      timeToUpgrade: 30
+      isUpgrade: 0
+    - Level: Level 2
+      goldsNeed: 1500
+      healthIncrease: 3
+      SpeedIncrease: 3
+      timeToUpgrade: 60
+      isUpgrade: 0
+    - Level: Level 3
+      goldsNeed: 2000
+      healthIncrease: 5
+      SpeedIncrease: 0
+      timeToUpgrade: 120
+      isUpgrade: 0
+    - Level: Level 4
+      goldsNeed: 4000
+      healthIncrease: 5
       SpeedIncrease: 5
-      timeToUpgrade: 1
+      timeToUpgrade: 240
+      isUpgrade: 0
+    - Level: Level 5
+      goldsNeed: 10000
+      healthIncrease: 15
+      SpeedIncrease: 0
+      timeToUpgrade: 300
+      isUpgrade: 0
+  - planeName: Saeghe
+    planeCharacteristic: 'Role : air superiority                            National
+      origin : United States                      First flight : 1970                          
+      Primary users ; US  , IRAN'
+    planeNumber: 3
+    BuyGold: 5000
+    isFreePlane: 0
+    numberOfRockets: 1
+    numberOfBullets: 1
+    planeCurrentHealth: 25
+    planeCurrentSpeed: 60
+    upgradeDetails:
+    - upgradeType: 0
+      goldsNeed: 0000000064000000
+    - upgradeType: 1
+      goldsNeed: 00000000c800000090010000
+    levelUpgrade:
+    - Level: Level 1
+      goldsNeed: 1000
+      healthIncrease: 2
+      SpeedIncrease: 2
+      timeToUpgrade: 30
+      isUpgrade: 0
+    - Level: Level 2
+      goldsNeed: 1500
+      healthIncrease: 3
+      SpeedIncrease: 3
+      timeToUpgrade: 60
+      isUpgrade: 0
+    - Level: Level 3
+      goldsNeed: 2000
+      healthIncrease: 5
+      SpeedIncrease: 0
+      timeToUpgrade: 120
+      isUpgrade: 0
+    - Level: Level 4
+      goldsNeed: 4000
+      healthIncrease: 5
+      SpeedIncrease: 5
+      timeToUpgrade: 240
+      isUpgrade: 0
+    - Level: Level 5
+      goldsNeed: 10000
+      healthIncrease: 15
+      SpeedIncrease: 0
+      timeToUpgrade: 300
+      isUpgrade: 0
+  - planeName: Mirage
+    planeCharacteristic: 'Role : air superiority                            National
+      origin : United States                      First flight : 1970                          
+      Primary users ; US  , IRAN'
+    planeNumber: 4
+    BuyGold: 5000
+    isFreePlane: 0
+    numberOfRockets: 1
+    numberOfBullets: 1
+    planeCurrentHealth: 25
+    planeCurrentSpeed: 60
+    upgradeDetails:
+    - upgradeType: 0
+      goldsNeed: 0000000064000000
+    - upgradeType: 1
+      goldsNeed: 00000000c800000090010000
+    levelUpgrade:
+    - Level: Level 1
+      goldsNeed: 1000
+      healthIncrease: 2
+      SpeedIncrease: 2
+      timeToUpgrade: 30
+      isUpgrade: 0
+    - Level: Level 2
+      goldsNeed: 1500
+      healthIncrease: 3
+      SpeedIncrease: 3
+      timeToUpgrade: 60
+      isUpgrade: 0
+    - Level: Level 3
+      goldsNeed: 2000
+      healthIncrease: 5
+      SpeedIncrease: 0
+      timeToUpgrade: 120
+      isUpgrade: 0
+    - Level: Level 4
+      goldsNeed: 4000
+      healthIncrease: 5
+      SpeedIncrease: 5
+      timeToUpgrade: 240
+      isUpgrade: 0
+    - Level: Level 5
+      goldsNeed: 10000
+      healthIncrease: 15
+      SpeedIncrease: 0
+      timeToUpgrade: 300
       isUpgrade: 0
