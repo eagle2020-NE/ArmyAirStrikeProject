@@ -46,8 +46,8 @@ public class ButtonLevelController : MonoBehaviour
         if (Locked == false)
         {
             audioSrc.PlayOneShot(clipOpen);
-            //string LevelNumber = "Level " + num;
-            //SceneManager.LoadScene(LevelNumber);
+            string LevelNumber = "Level" + num;
+            SceneManager.LoadScene(LevelNumber);
             StartCoroutine(AfterSound());
         }
         else

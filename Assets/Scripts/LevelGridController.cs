@@ -30,6 +30,7 @@ public class LevelGridController : MonoBehaviour
     #region Private Method
     private void Awake()
     {
+        levelRepo.Init();
         //CoinRepo.Save();
     }
     private void Start()

@@ -44,19 +44,22 @@ public class LevelRepository : MonoBehaviour
         //string[] s = RetriveFromRepoToArrey();
         //for (int i = 0; i < s.Length; i++)          // find first 0 in levelArrey. for example (index = 2)
         //{
-        //    if(s[i] == "0")
+        //    if (s[i] == "0")
         //    {
         //        LockedLevelIndex = i;
         //        break;
         //    }
         //}
-        OpenLevel(thisLevelIndex -2);
+        //OpenLevel(LockedLevelIndex);
+        OpenLevel(thisLevelIndex -1);
+        
     }
 
     public bool[] RetriveAllLevel()   // return all level locked State. [false,false,true,true,true,true,...] => show that Level 1 & 2 is Open.
     {
         bool[] levelArrey = new bool[LevelCount];
-        string[] levels = RetriveFromRepoToArrey();
+        string[] levels = new string[LevelCount];
+        levels = RetriveFromRepoToArrey();
         for(int i = 0; i < LevelCount; i++)
         {
             if(levels[i] == "1")
@@ -75,7 +78,7 @@ public class LevelRepository : MonoBehaviour
     #region Private Method
     private void Awake()
     { 
-        Init();
+        //Init();
     }
     private string[] RetriveFromRepoToArrey()  // [1,0,0,0,0,0,0,0,0,0]
     {
@@ -84,7 +87,7 @@ public class LevelRepository : MonoBehaviour
         return levels.Split('-');
     }
 
-    private void Init()
+    public void Init()
     {
         if (PlayerPrefs.HasKey(RepositoryName) == false)
         {
