@@ -140,7 +140,7 @@ namespace StrikeKit
                 //    r += radius / 10;
                 //}
                 //print(" spawn radius 1000 :   " + r);
-                Vector3 spawnDistance = new Vector3(r, r/2, 0);
+                Vector3 spawnDistance = new Vector3(r/2, r/2, Mathf.Abs(r));
                 GameObject obj = (GameObject)GameObject.Instantiate(Objectman[indexSpawn], transform.position + spawnDistance, Quaternion.identity);
                 if (obj.CompareTag("Enemy"))
                 {

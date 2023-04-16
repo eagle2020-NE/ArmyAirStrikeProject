@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityTimer;
 using DG.Tweening;
+
 
 public class Aircraft : MonoBehaviour
 {
@@ -112,7 +113,7 @@ public class Aircraft : MonoBehaviour
         //transform.DORotate(new Vector3(0, 0, 5), 1, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(Ease.InBounce);
         //transform.DOShakeRotation(10000, 2);
 
-
+        //Timer.Register(5f, () => Debug.Log("Hello World"));
     }
 
     private void Update()

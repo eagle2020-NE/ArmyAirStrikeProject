@@ -61,7 +61,7 @@ public class HudManager : MonoBehaviour
             PlayerSpeedtxt.text = (int)(playerDamageManager.gameObject.GetComponent<Rigidbody>().velocity.magnitude +
                 Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].planeCurrentSpeed + 1000)
                 + " m/s";
-            PlayerHeigthtxt.text = (int)(playerDamageManager.gameObject.transform.position.y + 4000) + " m";
+            PlayerHeigthtxt.text = (int)(playerDamageManager.gameObject.transform.position.y) + " m";
         }
         
     }

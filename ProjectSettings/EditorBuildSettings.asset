@@ -13,17 +13,8 @@ EditorBuildSettings:
     guid: 5344bab3b9cd3604783bf52a21dc39f6
   - enabled: 1
     path: Assets/Scenes/Level0.unity
-    guid: 2ca889b73f276ff429316c74bb2a2d4a
+    guid: 27e1df6a0756a9348b402467b6cd25c4
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: b11d91772a08b0b40bcf59c16b82379d
-  - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: 9f05cf4bf6f549f4eb3cd9496fb8da17
-  - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: c63c5d7cd8787cc4180026130725f525
-  - enabled: 1
-    path: Assets/Scenes/Level4.unity
-    guid: a471046d0e229eb4387eb64e3497debf
+    path: Assets/Scenes/EndLessGamePlay.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

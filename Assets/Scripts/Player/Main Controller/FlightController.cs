@@ -63,6 +63,7 @@ public class FlightController
         {
             totalThrust += _engines[i].CalcThrust(_throttleAxis.Value, _transform.forward);
         }
+
         //Debug.Log("totalThrust : " + totalThrust);
         //Debug.Log("_throttleAxis : " + _throttleAxis.Value);
         //Debug.Log("exp curve : " + _engineSettings.engineThrottle.Evaluate(_throttleAxis.Value));
@@ -83,8 +84,8 @@ public class FlightController
 
         //Debug.Log("speed : " + _rigidBody.velocity.magnitude);
         //Debug.Log("total drag : " + totalDrag);
-        //Debug.Log("total Force : " + (totalThrust + totalLift + totalDrag).magnitude);
-
+        Debug.Log("total Force : " + (totalThrust + totalLift + totalDrag).magnitude);
+        //Debug.Log("velocity.magnitude" + _rigidBody.velocity.magnitude);
         if (_rigidBody.velocity.magnitude > 5.0f)
         {
             CalibrateVelocity();
@@ -229,11 +230,12 @@ public class FlightController
 
         forwardSpeed = Mathf.Lerp(forwardSpeed, _rigidBody.velocity.magnitude, 20f * Time.fixedDeltaTime);
 
-        forwardSpeed = Mathf.Clamp(forwardSpeed, 0, Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].planeCurrentSpeed * _throttleAxis.Value);
+        forwardSpeed = Mathf.Clamp(forwardSpeed, 0, 
+            Resolver.Instance._planesData.planesDetails[PlayerPrefs.GetInt("curSelectedPlaneNumForGame")].planeCurrentSpeed * _throttleAxis.Value);
 
         _rigidBody.velocity = Vector3.Lerp(_rigidBody.velocity, forwardSpeed * _transform.forward, 10f * Time.fixedDeltaTime);
         
-        //Debug.Log("forewardSpeed : " + forwardSpeed + "____velocity : " + _rigidBody.velocity.magnitude);
+       // Debug.Log("forewardSpeed : " + forwardSpeed + "____velocity : " + _rigidBody.velocity.normalized);
     }
 
     #endregion
